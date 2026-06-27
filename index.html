@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Олег & Екатерина | Приглашение на свадьбу</title>
+    <meta name="description" content="Свадебное приглашение Олега и Екатерины">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="invitation" aria-label="Свадебное приглашение">
+      <section class="panel panel-left" aria-labelledby="couple-title">
+        <header class="top">
+          <h1 id="couple-title">Олег & Екатерина</h1>
+        </header>
+
+        <figure class="polaroid polaroid-main">
+          <img src="assets/couple.jpg" alt="Олег и Екатерина">
+          <figcaption>Мы женимся!</figcaption>
+        </figure>
+
+        <section class="intro" aria-labelledby="guests-title">
+          <h2 id="guests-title">Дорогие гости!</h2>
+          <p>
+            Совсем скоро состоится самое важное событие в нашей жизни - мы станем одной семьей!
+          </p>
+          <p>
+            Мы очень хотим разделить этот день с самыми близкими и родными людьми, поэтому будем рады видеть вас.
+          </p>
+        </section>
+
+        <section class="calendar" aria-label="Дата свадьбы">
+          <div class="calendar-sheet">
+            <p class="month">Август</p>
+            <div class="weekdays" aria-hidden="true">
+              <span>ПН</span><span>ВТ</span><span>СР</span><span>ЧТ</span><span>ПТ</span><span>СБ</span><span>ВС</span>
+            </div>
+            <div class="days">
+              <span></span><span></span><span></span><span></span><span></span><span>1</span><span>2</span>
+              <span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><strong>8</strong><span>9</span>
+              <span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span>
+              <span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span>
+              <span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+              <span>31</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="location" aria-labelledby="location-title">
+          <h2 id="location-title">Локация</h2>
+          <p>г. Саратов, ресторан «Брудершафт»</p>
+          <figure class="polaroid polaroid-small">
+            <img src="assets/champagne.jpg" alt="Бокалы шампанского">
+            <figcaption>уже ждете банкет?</figcaption>
+          </figure>
+          <a class="button button-map" href="https://maps.google.com/?q=%D0%A1%D0%B0%D1%80%D0%B0%D1%82%D0%BE%D0%B2%20%D1%80%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%20%D0%91%D1%80%D1%83%D0%B4%D0%B5%D1%80%D1%88%D0%B0%D1%84%D1%82" target="_blank" rel="noopener">
+            открыть карту
+          </a>
+        </section>
+      </section>
+
+      <section class="panel panel-right" aria-labelledby="dress-title">
+        <section class="dress" aria-labelledby="dress-title">
+          <h2 id="dress-title">Дресс-код</h2>
+          <p>Мы будем очень рады, если вы выберете наряд в цветовой гамме нашей свадьбы.</p>
+          <div class="palette" aria-label="Цветовая гамма">
+            <span style="--swatch: #d7c8b9"></span>
+            <span style="--swatch: #f3d5d9"></span>
+            <span style="--swatch: #d9d0ee"></span>
+            <span style="--swatch: #c9d8e8"></span>
+            <span style="--swatch: #bfc7df"></span>
+          </div>
+        </section>
+
+        <section class="details" aria-labelledby="details-title">
+          <h2 id="details-title">Детали</h2>
+          <article>
+            <h3>Цветы</h3>
+            <p>
+              Не дарите нам, пожалуйста, цветы. К сожалению, мы не успеем насладиться их красотой.
+              Вместо этого вы можете подарить что-то, что ассоциируется у вас с нашей парой.
+            </p>
+          </article>
+          <article>
+            <h3>Подарки</h3>
+            <p>
+              Мы будем рады вашим подаркам в конвертах, так как они помогут нам осуществить нашу совместную мечту.
+            </p>
+          </article>
+        </section>
+
+        <section class="rsvp" aria-labelledby="rsvp-title">
+          <h2 id="rsvp-title">Анкета</h2>
+          <form id="rsvp-form" name="wedding-rsvp" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="wedding-rsvp">
+
+            <label>
+              Имя и фамилия
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+
+            <label>
+              Номер телефона
+              <input type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="+7 (999) 999-99-99" required>
+            </label>
+
+            <fieldset>
+              <legend>Сможете ли вы присутствовать на торжестве?</legend>
+              <label class="choice"><input type="radio" name="attendance" value="Да, смогу" required>Да, смогу</label>
+              <label class="choice"><input type="radio" name="attendance" value="Нет, к сожалению, не смогу">Нет, к сожалению, не смогу</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Какие напитки предпочитаете?</legend>
+              <label class="choice"><input type="checkbox" name="drinks" value="Вино красное">Вино красное</label>
+              <label class="choice"><input type="checkbox" name="drinks" value="Вино белое">Вино белое</label>
+              <label class="choice"><input type="checkbox" name="drinks" value="Шампанское">Шампанское</label>
+              <label class="choice"><input type="checkbox" name="drinks" value="Виски">Виски</label>
+              <label class="choice"><input type="checkbox" name="drinks" value="Водка">Водка</label>
+              <label class="choice"><input type="checkbox" name="drinks" value="Безалкогольные напитки">Безалкогольные напитки</label>
+            </fieldset>
+
+            <button class="button" type="submit">отправить</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="countdown" aria-label="Обратный отсчет до свадьбы">
+          <p>Будем рады видеть вас через...</p>
+          <div class="timer" id="timer">
+            <span><strong>00</strong><small>дней</small></span>
+            <span><strong>00</strong><small>часов</small></span>
+            <span><strong>00</strong><small>минут</small></span>
+            <span><strong>00</strong><small>секунд</small></span>
+          </div>
+        </section>
+
+        <p class="signature">С любовью,<br>Олег и Екатерина</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
