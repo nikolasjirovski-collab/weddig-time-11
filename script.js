@@ -4,6 +4,28 @@ const formEndpoint = "";
 const timer = document.querySelector("#timer");
 const form = document.querySelector("#rsvp-form");
 const statusEl = document.querySelector("#form-status");
+const revealNodes = document.querySelectorAll(
+  ".top, .polaroid, .intro, .calendar, .location, .dress, .details, .rsvp, .countdown, .signature"
+);
+
+revealNodes.forEach((node) => node.classList.add("reveal"));
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.16 }
+  );
+
+  revealNodes.forEach((node) => revealObserver.observe(node));
+} else {
+  revealNodes.forEach((node) => node.classList.add("is-visible"));
+}
 
 function pad(value) {
   return String(value).padStart(2, "0");
@@ -20,6 +42,8 @@ function updateTimer() {
 
   timer.querySelectorAll("strong").forEach((node, index) => {
     node.textContent = index === 0 ? values[index] : pad(values[index]);
+    node.classList.remove("is-ticking");
+    requestAnimationFrame(() => node.classList.add("is-ticking"));
   });
 }
 
